@@ -1,4 +1,4 @@
-# /bin/bash
+#!/bin/bash
 
 BATTERY=`acpi | awk '{print $4}' | cut -c 1-2`
 STATUS=`acpi | awk '{print $3}'| cut -c 1-4`
