@@ -24,17 +24,17 @@ fi
 
 if [ $BATTERY -ge $MAX ] && [ "$STATUS" = 'Char' ]
 then
-        DISPLAY=:0 && notify-send --urgency=critical  --expire-time=5000  -i /usr/share/icons/Adwaita/256x256/legacy/battery-full.png "Battery is loaded with $BATTERY%!" "Stop the charging process as the battery is leaving its optimal state of charge."
+        DISPLAY=:0 /usr/bin/notify-send --urgency=critical  --expire-time=5000  -i /usr/share/icons/Adwaita/256x256/legacy/battery-full.png "Battery is loaded with $BATTERY%!" "Stop the charging process as the battery is leaving its optimal state of charge."
 elif [ $BATTERY -le $MIN ] && [ "$STATUS" = 'Disc' ]
 then
-        DISPLAY=:0 && notify-send --urgency=critical  --expire-time=5000  -i /usr/share/icons/Adwaita/256x256/legacy/battery-caution-charging.png "Battery has reached $BATTERY%!" "Start the charging process as the battery has reached the optimum state of charge."
+        DISPLAY=:0 /usr/bin/notify-send --urgency=critical  --expire-time=5000  -i /usr/share/icons/Adwaita/256x256/legacy/battery-caution-charging.png "Battery has reached $BATTERY%!" "Start the charging process as the battery has reached the optimum state of charge."
 fi
 
 if [ $BATTERY -ge $MMAX ] && [ "$STATUS" = 'Char' ]
 then
-        DISPLAY=:0 && notify-send --urgency=critical  --expire-time=5000  -i /usr/share/icons/Adwaita/256x256/legacy/battery-full-charging.png "Battery is loaded with $BATTERY%!" "Stop the charging process immediately to save the battery!"
+        DISPLAY=:0 /usr/bin/notify-send --urgency=critical  --expire-time=5000  -i /usr/share/icons/Adwaita/256x256/legacy/battery-full-charging.png "Battery is loaded with $BATTERY%!" "Stop the charging process immediately to save the battery!"
 elif [ $BATTERY -le $MMIN ] && [ "$STATUS" = 'Disc' ]
 then
-        DISPLAY=:0 && notify-send --urgency=critical  --expire-time=5000  -i /usr/share/icons/Adwaita/256x256/legacy/battery-caution.png "Battery has reached $BATTERY%!" "Start the charging process immediately to save the battery!"
+        DISPLAY=:0 /usr/bin/notify-send --urgency=critical  --expire-time=5000  -i /usr/share/icons/Adwaita/256x256/legacy/battery-caution.png "Battery has reached $BATTERY%!" "Start the charging process immediately to save the battery!"
 fi
 exit
